@@ -1,0 +1,48 @@
+.PostsListDropdown {
+  padding: 0 15px;
+  transition: height .3s, transform .3s;
+  height: 0;
+  overflow: hidden;
+  @media (max-width: 900px) {
+    padding: 0 10px;
+  }
+
+  &_contentDisabled {
+    height: 0;
+    padding: 0 5px;
+    transform: scale(0);
+    transform-origin: top;
+    opacity: 0;
+    transition: all .4s;
+  }
+
+  &__title {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+
+  &__contentDropdown {
+    border-top: 1px solid #eaeaea;
+    padding-top: 10px;
+  }
+
+  &__post {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid #8c8c8c;
+    }
+  }
+
+  &__titlePost {
+    padding-bottom: 7px;
+    font-size: 1.1rem;
+  }
+
+  &__body {
+    font-size: 1rem;
+  }
+
+}

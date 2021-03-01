@@ -1,0 +1,17 @@
+.SideBar {
+  list-style-type: none;
+  border-right: 1px solid #1f5377;
+  padding: 10px 10px 10px 0;
+  height: 99%;
+
+  &__item {
+    padding: 7px;
+    cursor: default;
+    &:hover {
+      background-color: #eaeaea;
+    }
+    &:active {
+      transform: scale(.98);
+    }
+  }
+}

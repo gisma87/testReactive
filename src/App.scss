@@ -1,0 +1,27 @@
+.App {
+  display: flex;
+  margin: 0 auto;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 1240px;
+  padding: 20px 20px 40px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.30);
+
+  &__column {
+    min-width: 300px;
+  }
+
+  &__usersColumn {
+
+  }
+
+  &__infoColumn {
+    width: 100%;
+  }
+
+  &__titleColumn {
+    padding: 0 0 15px;
+    text-align: center;
+    border-bottom: 1px solid #1f5377;
+  }
+}
