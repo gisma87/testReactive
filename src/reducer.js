@@ -1,7 +1,6 @@
 const initialState = {
   loading: 0,
   users: null,
-  userInfo: null,
   userActiveId: null,
   postsUserActive: null,
 }
@@ -15,7 +14,7 @@ const reducer = (state = initialState, action) => {
         loading: (state.loading > 0) ? (state.loading - 1) : 0,
       }
 
-      case 'GET_USER_POSTS':
+    case 'GET_USER_POSTS':
       return {
         ...state,
         postsUserActive: action.payload,
@@ -26,6 +25,23 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         userActiveId: action.payload
+      }
+
+    case 'ADD_USER':
+      return {
+        ...state,
+        users: [...state.users, action.payload]
+      }
+
+    case 'CHANGE_USER':
+      const indexChangeUser = state.users.findIndex(item => item.id === action.payload.id)
+      return {
+        ...state,
+        users: [
+          ...state.users.slice(0, indexChangeUser),
+          action.payload,
+          ...state.users.slice(indexChangeUser + 1)
+        ]
       }
 
     case 'LOADING' :

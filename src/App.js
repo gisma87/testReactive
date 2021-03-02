@@ -1,10 +1,11 @@
 import React, {useEffect} from "react";
 import './App.scss'
-import SideBar from "./components/SideBar/SideBar";
-import UserInfo from "./components/UserInfo/UserInfo";
 import {connect} from "react-redux";
 import {getUser} from "./actions";
 import Loader from "./components/Loader";
+import {Redirect, Route, Switch} from "react-router-dom";
+import CreateUser from "./page/CreateUser/CreateUser";
+import UsersPage from "./page/UsersPage/UsersPage";
 
 const App = props => {
 
@@ -16,15 +17,11 @@ const App = props => {
   return (
     <div className="App">
       <Loader classStyle={props.loading ? ' Loader_is-opened' : ''}/>
-      <section className='App__column App__usersColumn'>
-        <h2 className='App__titleColumn'>Users</h2>
-        <SideBar/>
-      </section>
-      <section className='App__column App__infoColumn'>
-        <h2 className='App__titleColumn'>User Info</h2>
-        <UserInfo/>
-      </section>
-
+      <Switch>
+        <Route exact path="/" component={UsersPage}/>
+        <Route path="/create-user/" component={CreateUser}/>
+        <Redirect to={'/'}/>
+      </Switch>
     </div>
   );
 }

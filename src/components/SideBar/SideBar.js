@@ -2,6 +2,7 @@ import React from 'react'
 import './SideBar.scss'
 import {activeUserId, getUserPosts} from "../../actions";
 import {connect} from "react-redux";
+import {Link} from "react-router-dom";
 
 const SideBar = props => {
 
@@ -11,14 +12,20 @@ const SideBar = props => {
   }
 
   return (
-    <ul className='SideBar'>
-      {
-        props.users &&
-        props.users.map(user => <li onClick={() => selectItem(user.id)}
-                                    className='SideBar__item'
-                                    key={user.id}>{user.name}</li>)
-      }
-    </ul>
+    <>
+      <ul className='SideBar'>
+        {
+          props.users &&
+          props.users.map(user => <li onClick={() => selectItem(user.id)}
+                                      className='SideBar__item'
+                                      key={user.id}>{user.name}</li>)
+        }
+        <li className='SideBar__addUser'>
+          <Link to='/create-user/' className='SideBar__btn'>Добавить пользователя</Link>
+        </li>
+      </ul>
+
+    </>
   )
 }
 

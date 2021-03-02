@@ -1,0 +1,160 @@
+.CreateUser {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f6f6f6;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    margin: 0 auto;
+    max-width: 340px;
+    min-height: 450px;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.14);
+
+    padding: 30px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1 1 100%;
+  }
+
+  &__title {
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+
+  &__element {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    padding-top: 10px;
+  }
+
+  &__label {
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    font-style: normal;
+    font-weight: 500;
+    font-size: .9rem;
+    color: #999;
+    transform: translateY(0);
+    transition: transform .3s, font-size .3s;
+  }
+
+  &__input:focus + .CreateUser__label {
+    font-size: .6rem;
+    transform: translateY(-24px);
+  }
+
+  &__input:valid + .CreateUser__label {
+    font-size: .6rem;
+    transform: translateY(-24px);
+  }
+
+  &__input {
+    width: 100%;
+    outline: none;
+    border-bottom: 1px solid #3369F3;
+    padding: 5px 0;
+    font-size: .9rem;
+    line-height: 1.1rem;
+  }
+
+  &__errorMessage {
+    position: absolute;
+    bottom: -16px;
+    left: 0;
+    color: #FF2F2F;
+    font-size: .55rem;
+    font-weight: 400;
+    opacity: 0;
+  }
+
+  &__errorMessage_visible {
+    display: flex !important;
+    opacity: 1 !important;
+  }
+
+  &__buttons {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__link {
+    color: #3369F3;
+    margin-top: 14px;
+    font-size: .8rem;
+
+    &:hover {
+      color: #95c11f;
+    }
+  }
+
+  &__inputFile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+  }
+
+  &__labelFile {
+    margin: 0 auto;
+    max-width: 122px;
+    text-align: center;
+    font-size: .9rem;
+    font-weight: 500;
+    color: #3369F3;
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  &__fileTitle {
+    color: #8D8D8D;
+    font-size: .9rem;
+    margin: 0 auto;
+  }
+
+  &__fileContainer {
+    display: none;
+  }
+
+  &__imgDeleteBtn {
+    object-fit: cover;
+    cursor: pointer;
+  }
+
+  &__button {
+    cursor: pointer;
+    outline: none;
+    background: #3369F3;
+    border-radius: 8px;
+    padding: 12px;
+    width: 100%;
+    color: #fff;
+    font-size: .95rem;
+    box-shadow: 1px 3px 3px 0 rgba(0, 0, 0, 0.6);
+
+    &:active {
+      transition: all .1s;
+      transform: translateY(2px);
+      box-shadow: 0 2px 0 0 grey;
+    }
+  }
+}
+
