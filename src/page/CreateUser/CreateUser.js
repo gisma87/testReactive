@@ -34,6 +34,7 @@ const CreateUser = props => {
   function submit(e) {
     e.preventDefault()
     props.addUser(valueForm)
+    props.history.push('/')
   }
 
   function onChangeHandler(e) {

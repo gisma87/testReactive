@@ -119,6 +119,7 @@ const UserInfo = props => {
                        readOnly={readOnlyForm}/>
                 <input type="text"
                        name='zipcode'
+                       value={valueForm.zipcode}
                        onChange={onChangeHandler}
                        className="UserInfo__itemDescription UserInfo__itemAddress"
                        placeholder={`zipcode: ${userInfo.zipcode}`}
